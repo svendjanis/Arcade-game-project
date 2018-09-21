@@ -4,7 +4,7 @@ body {
 }
 
 .points {
-   color: firebrick;
+    color: firebrick;
     justify-content: center;
     display: flex;
     text-align: center;
