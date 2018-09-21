@@ -3,7 +3,13 @@ body {
 
 }
 
-.score {
-
+.points {
+   color: firebrick;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font: 100px bold ;
 
 }
+
+

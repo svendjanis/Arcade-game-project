@@ -10,7 +10,6 @@ const Rock = function () {
 
 Rock.prototype.update = function() {
 
-
 };
 
 Rock.prototype.render = function() {
@@ -30,7 +29,6 @@ Star.prototype.update = function () {
         player.x + 40 > this.x &&
         player.y < this.y + 35 &&
         40 + player.y > this.y)
-
         this.x = 50000;
 };
 
@@ -146,8 +144,6 @@ Player.prototype.update = function()  {
     if(this.y > 400) {
         this.y = 400
     }
-
-
 };
 
 
@@ -179,11 +175,6 @@ Player.prototype.handleInput = function (arrows) {
             break;
 
     }
-
-
-
-
-
 
 };
 
