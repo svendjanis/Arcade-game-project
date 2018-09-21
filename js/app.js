@@ -28,8 +28,14 @@ Star.prototype.update = function () {
     if ( player.x < this.x + 55 &&
         player.x + 40 > this.x &&
         player.y < this.y + 35 &&
-        40 + player.y > this.y)
+        40 + player.y > this.y) {
         this.x = 50000;
+        document.querySelector('.points').innerHTML = points;
+        points++
+
+    }
+
+
 };
 
 Star.prototype.render = function () {
