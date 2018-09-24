@@ -1,12 +1,14 @@
 body {
+
     text-align: center;
+    background-color: firebrick;
 
 }
 
 
 .points {
 
-    color: firebrick;
+    color: white;
     justify-content: center;
     display: flex;
     text-align: center;
