@@ -12,6 +12,7 @@ Rock.prototype.update = function() {
 
 };
 
+
 Rock.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -32,10 +33,7 @@ Star.prototype.update = function () {
         this.x = 50000;
         document.querySelector('.points').innerHTML = points;
         points++
-
     }
-
-
 };
 
 Star.prototype.render = function () {
@@ -44,7 +42,9 @@ Star.prototype.render = function () {
 };
 
 //ENEMYYYY
-var Enemy = function(x = 10, y = 20) {
+
+
+const Enemy = function(x = 10, y = 20) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -53,12 +53,12 @@ var Enemy = function(x = 10, y = 20) {
     this.sprite = 'images/enemy-bug.png';
     this.x = x;
     this.y = y;
-    this.direction = 'right';
 };
+
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
+Enemy.prototype.update = function() {
     // console.log('dt', dt);
 
     if (this.x < 400) {
@@ -77,6 +77,7 @@ Enemy.prototype.update = function(dt) {
 
     {
         alert('You have '+(points - 1)+' points!');
+        window.location.reload();
         points = 1;
         player.x = 200;
         player.y = 400;
@@ -102,7 +103,7 @@ Enemy.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var allEnemies = [
+const allEnemies = [
     new Enemy(100, 230),
     new Enemy(0, 150),
     new Enemy(100,65),
@@ -110,17 +111,18 @@ var allEnemies = [
     new Enemy(0,300)
 ];
 
-var allRock = [
+const allRock = [
     new Rock(x=300,y=130),
     new Rock(x=100,y=300)
 ];
 
-var allStar  = [
+const allStar  = [
     new Star(x= 200, y=230),
     new Star(X= 400, Y=50)
 ];
 
-//playaaa
+//player
+
 
 
 const Player = function (x= 200, y=400) {
@@ -136,9 +138,8 @@ Player.prototype.update = function()  {
         this.y = 400;
         this.x = 200;
         document.querySelector('.points').innerHTML = points;
-        points++
-
-        }
+        points++;
+    }
 
     if(this.x < 0) {
         this.x = 0
@@ -160,27 +161,22 @@ Player.prototype.render = function () {
 };
 
 Player.prototype.handleInput = function (arrows) {
-
     switch (arrows) {
         case 'up' :
-
-            console.log(this.y - 90);
-            this.y = this.y -  90 ;
-
+            this.y = this.y - 90;
             break;
 
         case 'down' :
             this.y = this.y + 90;
             break;
+
         case 'right' :
             this.x = this.x + 100;
             break;
 
-
         case 'left' :
             this.x = this.x - 100;
             break;
-
     }
 
 };
@@ -190,7 +186,7 @@ const player = new Player();
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
-    var allowedKeys = {
+    const allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
