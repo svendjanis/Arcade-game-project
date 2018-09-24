@@ -2,7 +2,7 @@
 let points =1;
 
 //sve za rock
-const Rock = function () {
+const Rock = function (x= 50,y=100) {
     this.sprite = 'images/Rock.png';
     this.x = x;
     this.y = y;
@@ -19,7 +19,7 @@ Rock.prototype.render = function() {
 //sve za star
 
 const Star = function (x= 200, y=100) {
-    this.sprite = 'images/Star.png'
+    this.sprite = 'images/Star.png';
     this.x = x;
     this.y = y;
 };
@@ -76,12 +76,12 @@ Enemy.prototype.update = function(dt) {
     )
 
     {
-        alert('You have '+(points - 1)+' points!')
-        points = 1
+        alert('You have '+(points - 1)+' points!');
+        points = 1;
         player.x = 200;
         player.y = 400;
 
-    };
+    }
 
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -137,7 +137,8 @@ Player.prototype.update = function()  {
         this.x = 200;
         document.querySelector('.points').innerHTML = points;
         points++
-    }
+
+        }
 
     if(this.x < 0) {
         this.x = 0
