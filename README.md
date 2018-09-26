@@ -1,4 +1,4 @@
-Arcade game
+**Arcade game**
 
 This is my third project on Udacity. I was very looking forward to it because it looked so fun and it did not disappointed me. This is arcade game. You move your character with the arrows. There are six rows in this game, you start in the grass-row and the goal of the game is to go to the water-row without dying, without bug eats you. You can collect stars in the game. There is point meter also and every time you reach water-row it is increased by one.
 
